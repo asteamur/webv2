@@ -1,16 +1,21 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import api from './apify'
 
 Vue.use(Vuex)
 
-export default new Vuex.Store({
-  state: {
+const tea = api('http://localhost:3000/tea')
 
+export default new Vuex.Store({
+  modules: {
+    tea
+  },
+  state: {
+    msg: null
   },
   mutations: {
-
-  },
-  actions: {
-
+    toast(state){
+      state.msg = null
+    }
   }
 })
