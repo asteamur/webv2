@@ -1,4 +1,5 @@
 import axios from 'axios'
+import qs from 'qs'
 
 function createApiStore(path){
     const mutations = makeApiMutations()
@@ -15,6 +16,9 @@ function createApiStore(path){
         getters: {
             item: (state) =>{
                 return state.item
+            },
+            search: (state) =>{
+                return state.search
             },
             items: (state) =>{
                 return state.itemList.map((x)=>state.items[x])
@@ -54,6 +58,9 @@ function makeApiMutations(){
         updateSearch(state, {name, value}){
             state.search = {...state.search, [name]: value}
         },
+        editItem(state, _id){
+            state.item = {...state.items[_id]}
+        },
         resetModel(state){
             state.item = {}
         },
@@ -75,7 +82,10 @@ function makeApiCalls(path){
             try{
                 const response = await axios.get(path + '/' + _id, {
                     //headers: { Authorization: "Bearer " + rootState.JWT },
-                    params: query
+                    params: query,
+                    paramsSerializer: params => {
+                        return qs.stringify(params, {arrayFormat: 'comma' })
+                    }
                 })
                 commit('newItem', response.data)
             }catch(err){
@@ -86,7 +96,10 @@ function makeApiCalls(path){
             try{
                 const response = await axios.get(path, {
                     //headers: { Authorization: "Bearer " + rootState.JWT },
-                    params: query
+                    params: query,
+                    paramsSerializer: params => {
+                        return qs.stringify(params, {arrayFormat: 'comma' })
+                    }
                 })
                 commit('newItems', response.data)
             }catch(err){

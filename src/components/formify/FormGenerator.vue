@@ -19,7 +19,7 @@
                     </b-form-group>
                 </ValidationProvider>
             </div>
-            <button :disabled="!valid" @click="onSubmit">Submit</button>
+            <b-button :disabled="!valid" @click="onSubmit">Submit</b-button>
         </ValidationObserver>
     </div>    
 </template>

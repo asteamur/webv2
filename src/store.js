@@ -5,10 +5,12 @@ import api from './apify'
 Vue.use(Vuex)
 
 const tea = api('http://localhost:3000/tea')
+const memorandum = api('http://localhost:3000/memorandum')
 
 export default new Vuex.Store({
   modules: {
-    tea
+    tea,
+    memorandum
   },
   state: {
     msg: null

@@ -1,9 +1,35 @@
 {
-    "abc": [
-      {
-        "_id": 1,
-        "name": "miguel",
-        "surname": "alarcos"
-      }
-    ]
-  }
+  "abc": [
+    {
+      "_id": 1,
+      "name": "miguel",
+      "surname": "alarcos"
+    }
+  ],
+  "memorandum": [
+    {
+      "_id": 1,
+      "text": "primer texto",
+      "author": "miguel",
+      "date": "03-09-2019"
+    },
+    {
+      "_id": 2,
+      "text": "segundo texto",
+      "author": "vero",
+      "date": "02-09-2019"
+    },
+    {
+      "_id": 3,
+      "text": "tercer texto",
+      "author": "bernardo",
+      "date": "01-09-2019"
+    },
+    {
+      "text": "hola",
+      "author": "miguel",
+      "date": "2019-09-04T14:28:14.972Z",
+      "_id": 4
+    }
+  ]
+}

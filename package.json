@@ -13,6 +13,8 @@
     "bootstrap": "^4.3.1",
     "bootstrap-vue": "^2.0.0-rc.28",
     "core-js": "^2.6.5",
+    "dayjs": "^1.8.16",
+    "qs": "^6.8.0",
     "vee-validate": "^3.0.3",
     "vue": "^2.6.10",
     "vue-router": "^3.0.3",
