@@ -1,17 +1,23 @@
 <template>
-  <div class="memorandum">
-    <form-generator :getter="search.getter" :mutation="search.mutation" :schema="search.schema" @input="handleSearch()"></form-generator>
-    <b-button @click="last(7)">Últimos 7 días</b-button>
-    <b-button @click="last(30)">Último mes</b-button>    
-    <hr>
-    <form-generator :getter="model.getter" :mutation="model.mutation" :schema="model.schema" @input="handleModel()"></form-generator>
-    <div v-for="mem in items" :key="mem._id">
-        <div>{{mem._id}}</div>
-        <div>{{mem.text}}</div>
-        <div>{{mem.author}}</div>
-        <div>{{mem.date}}</div>
-    </div>    
-  </div>
+  <b-container>
+    <b-row align-h="center">      
+      <b-col sm="8">
+        <div class="memorandum">
+            <form-generator :getter="search.getter" :mutation="search.mutation" :schema="search.schema" @input="handleSearch()"></form-generator>
+            <b-button variant="outline-primary" @click="last(7)">Últimos 7 días</b-button>
+            <b-button variant="outline-primary" @click="last(30)">Último mes</b-button>    
+            <hr>
+            <form-generator :getter="model.getter" :mutation="model.mutation" :schema="model.schema" @input="handleModel()"></form-generator>
+            <div v-for="mem in items" :key="mem._id">
+                <div>{{mem._id}}</div>
+                <div>{{mem.text}}</div>
+                <div>{{mem.author}}</div>
+                <div>{{mem.date}}</div>
+            </div>    
+        </div>
+      </b-col>
+    </b-row>
+  </b-container>
 </template>
 
 <script>

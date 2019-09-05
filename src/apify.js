@@ -1,15 +1,15 @@
 import axios from 'axios'
 import qs from 'qs'
 
-function createApiStore(path){
-    const mutations = makeApiMutations()
+function createApiStore(path, initialModel){
+    const mutations = makeApiMutations(initialModel)
     const actions = makeApiCalls(path)
     return {
         namespaced: true,
         state: {
             items: {},
             itemList: [],
-            item: {},
+            item: initialModel ? initialModel() : {},
             search: {}
         },
         mutations,
@@ -34,7 +34,7 @@ function createApiStore(path){
     }
 }
 
-function makeApiMutations(){
+function makeApiMutations(initialModel){
     return {
         newItem(state, item){
             state.item = item
@@ -62,7 +62,11 @@ function makeApiMutations(){
             state.item = {...state.items[_id]}
         },
         resetModel(state){
-            state.item = {}
+            if(initialModel){
+                state.item = initialModel()
+            }else{
+                state.item = {}
+            }
         },
         resetSearch(state){
             state.search = {}

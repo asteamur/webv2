@@ -1,13 +1,13 @@
 <template>
     <div>
-        <b-form-textarea v-model="x"></b-form-textarea>
+        <b-form-textarea v-model="x" v-bind="opts"></b-form-textarea>
     </div>
 </template>
 
 <script>
  
 export default {
-    props: ['name', 'value', 'state', 'placeholder', 'getter', 'mutation'],
+    props: ['name', 'value', 'state', 'placeholder', 'getter', 'mutation', 'opts'],
     computed: {
         x: {
             get(){

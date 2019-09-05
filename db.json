@@ -9,27 +9,69 @@
   "memorandum": [
     {
       "_id": 1,
-      "text": "primer texto",
+      "text": "Es un hecho establecido hace demasiado tiempo que un lector se distraerá con el contenido del texto de un sitio mientras que mira su diseño. El punto de usar Lorem Ipsum es que tiene una distribución más o menos normal de las letras, al contrario de usar textos como por ejemplo. Estos textos hacen parecerlo un español que se puede leer. Muchos paquetes de autoedición y editores de páginas web usan el Lorem Ipsum como su texto por defecto, y al hacer una búsqueda de va a dar por resultado muchos sitios web que usan este texto si se encuentran en estado de desarrollo. Muchas versiones han evolucionado a través de los años, algunas veces por accidente, otras veces a propósito (por ejemplo insertándole humor y cosas por el estilo).",
       "author": "miguel",
-      "date": "03-09-2019"
+      "date": "2019-09-04T14:28:14.972Z"
     },
     {
       "_id": 2,
-      "text": "segundo texto",
+      "text": "Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas, las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.",
       "author": "vero",
-      "date": "02-09-2019"
+      "date": "2019-09-04T14:28:14.972Z"
     },
     {
       "_id": 3,
       "text": "tercer texto",
       "author": "bernardo",
-      "date": "01-09-2019"
+      "date": "2019-09-04T14:28:14.972Z"
     },
     {
       "text": "hola",
       "author": "miguel",
       "date": "2019-09-04T14:28:14.972Z",
       "_id": 4
+    },
+    {
+      "text": "ppp",
+      "author": "miguel",
+      "date": "2019-09-04T18:03:54.204Z",
+      "_id": 5
+    },
+    {
+      "date": "2019-09-04T03:37:00.000Z",
+      "text": "esta es una prueba",
+      "author": "miguel",
+      "_id": 6
+    },
+    {
+      "date": "2019-09-03T03:43:00.000Z",
+      "text": "r",
+      "author": "miguel",
+      "_id": 7
+    },
+    {
+      "date": "2019-09-03T03:43:00.000Z",
+      "text": "ra",
+      "author": "miguel",
+      "_id": 8
+    },
+    {
+      "date": "2019-09-05T03:51:00.000Z",
+      "text": "rrr",
+      "author": "miguel",
+      "_id": 9
+    },
+    {
+      "date": "2019-09-05T03:51:56.392Z",
+      "text": "hola;)",
+      "author": "miguel",
+      "_id": 10
+    },
+    {
+      "text": "000",
+      "date": "2019-09-05T04:24:28.938Z",
+      "author": "miguel",
+      "_id": 11
     }
   ]
 }

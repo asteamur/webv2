@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 //import Home from './views/Home.vue'
-import Memorandum from './views/Memorandum.vue'
+import Memorandum from './views/Memorandum2.vue'
 
 Vue.use(Router)
 

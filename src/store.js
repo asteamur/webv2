@@ -5,7 +5,9 @@ import api from './apify'
 Vue.use(Vuex)
 
 const tea = api('http://localhost:3000/tea')
-const memorandum = api('http://localhost:3000/memorandum')
+const memorandum = api('http://localhost:3000/memorandum', ()=>{
+  return {text: '', date: new Date()}
+})
 
 export default new Vuex.Store({
   modules: {

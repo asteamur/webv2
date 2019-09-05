@@ -1,6 +1,6 @@
 <template>
     <div>
-        <ValidationObserver v-slot="{ valid }">
+        <ValidationObserver ref="observer" v-slot="{ invalid, validate }">
             <div v-for="key in keys" :key="key">
                 <ValidationProvider :name="schema[key].name" :rules="schema[key].rule" v-slot="{ validate, errors }">                    
                     <b-form-group
@@ -19,7 +19,7 @@
                     </b-form-group>
                 </ValidationProvider>
             </div>
-            <b-button :disabled="!valid" @click="onSubmit">Submit</b-button>
+            <b-button :disabled="invalid" @click="onSubmit">Submit</b-button>
         </ValidationObserver>
     </div>    
 </template>
@@ -27,6 +27,9 @@
 <script>
 export default {
     props: ['schema', 'getter', 'mutation'],
+    mounted(){
+        this.$refs.observer.validate()
+    },
     computed: {
         keys(){
             return Object.keys(this.schema)
