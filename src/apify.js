@@ -132,6 +132,7 @@ function makeApiCalls(path){
                 commit('updateItem', body)
                 commit('toast', {text: 'Datos actualizados con éxito', variant: 'success'}, {root: true})
             }catch(err){
+                console.log(err)
                 commit('toast', {text: err.response.data.error, variant: 'error'}, {root: true})
             }
         }

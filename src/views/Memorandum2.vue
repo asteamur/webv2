@@ -20,6 +20,7 @@
                     <div class="text">
                         {{item.text}}
                     </div>
+                    <b-button @click="edit(item._id)">editar</b-button>
                 </b-card>
             </template>
         </view-generator>
@@ -50,10 +51,10 @@ export default {
         fields: ['text', 'author', 'date'],
         orderOptions: [
             {
-                value: '-date', text: 'Fecha descendiente'
+                value: '-date', text: 'Fecha descendente'
             },
             {
-                value: '+date', text: 'Fecha ascendiente'
+                value: '+date', text: 'Fecha ascendente'
             },
         ],
         model: {
@@ -66,6 +67,7 @@ export default {
                 },
                 text: {
                     component: Text,
+                    errorMsg: 'El campo es obligatorio',
                     rule: 'required',
                     name: 'texto',
                     opts: {rows: "7"}, 
@@ -91,13 +93,19 @@ export default {
     }
   },
   methods: {
+    edit(_id){
+        this.$store.commit('memorandum/editItem', _id)
+    },
     async handleModel(){
         const model = {...this.$store.getters['memorandum/item']}
         model.author = 'miguel'
         //model.date = model.date || new Date()
         //model.tea_id = this.$route.params._id
-        console.log(model)
-        await this.$store.dispatch('memorandum/post', model)
+        if(!model._id){
+            await this.$store.dispatch('memorandum/post', model)
+        }else{
+            await this.$store.dispatch('memorandum/patch', {_id: model._id, body: model})
+        }
         this.$store.commit('memorandum/resetModel')
     },
     last(days){

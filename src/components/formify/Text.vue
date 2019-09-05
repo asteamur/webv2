@@ -7,7 +7,7 @@
 <script>
  
 export default {
-    props: ['name', 'value', 'state', 'placeholder', 'getter', 'mutation', 'opts'],
+    props: ['name', 'value', 'state', 'placeholder', 'getter', 'mutation', 'opts', 'validate'],
     computed: {
         x: {
             get(){
@@ -15,8 +15,13 @@ export default {
             },
             set(v){
                 this.$store.commit(this.mutation, {name: this.name, value: v})
-                this.$emit('input', v)
+                //this.$emit('input', v)
             }
+        }
+    },
+    watch: {
+        x(newVal){
+            this.validate(newVal)
         }
     }
 }

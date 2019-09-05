@@ -3,11 +3,13 @@
     <b-row align-h="center">      
       <b-col sm="8">
         <div>
-            <b-button v-b-toggle.collapse-search variant="primary">Filtros de búsqueda</b-button>
-            <b-collapse id="collapse-search" class="mt-2">
-                <form-generator :getter="search.getter" :mutation="search.mutation" :schema="search.schema" @input="handleSearch()"></form-generator>
-            </b-collapse>
-            <slot name="postSearch"></slot>
+            <b-card>
+                <b-button v-b-toggle.collapse-search variant="primary">Filtros de búsqueda</b-button>
+                <b-collapse id="collapse-search" class="mt-2">
+                    <form-generator :getter="search.getter" :mutation="search.mutation" :schema="search.schema" @input="handleSearch()"></form-generator>
+                </b-collapse>
+                <slot name="postSearch"></slot>
+            </b-card>
             <hr>
             <slot name="preList"></slot>
             <div>

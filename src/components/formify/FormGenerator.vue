@@ -9,6 +9,7 @@
                         :state="state(errors)"
                     >
                         <component :getter="getter"
+                                   :validate="validate"
                                    @input="validate($event)"
                                    :mutation="mutation"
                                    :name="key" 
